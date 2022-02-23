@@ -34,7 +34,7 @@ jobs:
           git config --global user.email "fabriciosalaspaypal@gmail.com"
           git config --global pull.rebase false
           git config --global credential.helper store
-          sudo echo "https://FabricioSC123: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@github.com" > ~/.git-credentials
+          sudo echo "https://FabricioSC123:${{ secrets.DEV_TOKEN }}@github.com" > ~/.git-credentials
 
       - name: Clone workflow
         continue-on-error: true
@@ -77,13 +77,13 @@ jobs:
           mkdir configs && cd configs
           touch configs.prop
           touch allowed2port.json
-          echo "bot-token=5275719120:AAHeCVkeJRxPxVNPP2XerAimxbmCSZNm6u4" >> configs.prop
+          echo "bot-token=${{ secrets.BOT_TOKEN }}" >> configs.prop
           echo "bot-username=FabricioSCGSI" >> configs.prop
           echo "bot-master=1802116604" >> configs.prop
           echo "privateChat=-1001625394540" >> configs.prop
           echo "requestChat=-1001625394540" >> configs.prop
           echo "publicChannel=gsisc" >> configs.prop
-          echo "bot-sf-pass=Salaspro123" >> sf-creds.prop
+          echo "bot-sf-pass=${{ secrets.SF_PASS }}" >> sf-creds.prop
           echo "bot-sf-proj=projectgsisc" >> sf-creds.prop
           echo "bot-sf-user=fabriciopapi123" >> sf-creds.prop
           echo "bot-announcement-id=-1001652438992" >> sf-creds.prop
