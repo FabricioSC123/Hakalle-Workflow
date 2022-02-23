@@ -2,7 +2,6 @@ name: FabricioSC Bot1
 on:
   push:
     branches: [stag]
-  workflow_dispatch:
 
 env:
   TZ: America/Recife
